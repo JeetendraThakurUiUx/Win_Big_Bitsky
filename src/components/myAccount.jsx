@@ -8,7 +8,6 @@ import '../assets/css/myAccount.css';
 import Skull from '../assets/images/skull.jpg'
 import accountDropwdown from '../assets/images/Account-DropDown.svg'
 import BigWin from '../assets/images/Big-Win.png'
-
 import avatar from '../assets/images/Account-avatar.jpg'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { LeftSvg, RightSvg, DisplayTest } from '../data/data'
@@ -56,7 +55,6 @@ export default function MyAccount() {
     });
 
     const tabTitles = ['My Account', 'Wallet', 'All Transactions', 'My Affiliates'];
-
     const getActiveClass = (field) => {
         return focused === field || formik.values[field].trim() !== '' ? 'active' : '';
     };
@@ -83,53 +81,44 @@ export default function MyAccount() {
                     <div className="profile-box dropdown">
 
                         <img src={accountDropwdown} className="dropdown-bg" />
-
-                        {/* AVATAR */}
                         <div className="avatar-wrap dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                             <div className="avatar-ring"></div>
                             <img src={avatar} alt="avatar" className="avatar-img" />
                         </div>
-
-                        {/* USERNAME */}
                         <span className="username dropdown-toggle" data-bs-toggle="dropdown">
                             John123
                         </span>
-
-                        {/* MENU */}
                         <ul className="dropdown-menu">
                             <li><a className="dropdown-item" href="#">Profile</a></li>
                             <li><a className="dropdown-item" href="#">Settings</a></li>
                             <li><a className="dropdown-item" href="#">Logout</a></li>
                         </ul>
                     </div>
-
-
                 </div>
-
-
-
             </header>
-
             <Container>
                 <Row className="tabs-box w-100 m-0 mb-5">
                     <Col>
-                        {/* <Tabs value={tabIndex} onChange={(e, val) => setTabIndex(val)}>
-                            {tabTitles.map((title, idx) => (
-                                <Tab key={idx} label={title}  />
-                            ))}
-                        </Tabs> */}
-                        <Tabs value={tabIndex} onChange={(e, val) => setTabIndex(val)}>
-                            {tabTitles.map((title, idx) => (
-                                <Tab
-                                    key={idx}
-                                    label={title}
-                                    className={tabIndex === idx ? 'custom-tab selected-tab' : 'custom-tab'}
-                                />
-                            ))}
-                        </Tabs>
+                   <Tabs value={tabIndex} onChange={(e, val) => setTabIndex(val)} className="tabs-box">
+    {tabTitles.map((title, idx) => (
+        <Tab
+            key={idx}
+            label={
+                <div className="tab-label">
+                    {title}
+
+                    <div className={`circle ${tabIndex === idx ? "active-circle" : ""}`}>
+                        <div className="dot"></div>
+                    </div>
+                </div>
+            }
+            className={`custom-tab ${tabIndex === idx ? 'selected-tab' : ''}`}
+        />
+    ))}
+</Tabs>
+
                     </Col>
                 </Row>
-
                 <Row className="form-box w-100 m-0">
                     <div className='icon p-0 left-icon'><LeftSvg /></div>
                     <div className='icon p-0 right-icon text-end'><RightSvg /></div>

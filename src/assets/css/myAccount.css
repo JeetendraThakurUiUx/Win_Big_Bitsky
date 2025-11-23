@@ -216,7 +216,6 @@
 
   .form-box {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
     background: #1b1b1b;
     padding: 60px 24px 24px 24px;
     position: relative;
@@ -446,6 +445,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: var(--white);
     flex: 1;
     position: relative;
+    overflow: visible;
 
     &:nth-of-type(odd) {
       border-top: 2px dashed var(--color-grey);
@@ -536,18 +536,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
       position: absolute;
     }
 
-    /* &::after{
-    bottom: 0%;
-    left: 8px;
-    transform: translateX(-50%) rotate(-180deg);
-    width: 0;
-    height: 0;
-    border-left: 16px solid transparent;
-    border-right: 0px solid transparent;
-    border-bottom: 60px solid rgb(67, 67, 67);
-    z-index: 96;
-   } */
-
     &::after {
       content: "";
       position: absolute;
@@ -573,6 +561,69 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     }
   }
 }
+
+.tab-label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--color-grey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .3s ease;
+  background: var(--bg-dark);
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-grey);
+    transition: .3s ease;
+  }
+}
+
+.active-circle {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 6px var(--primary-color);
+  background: var(--bg-dark);
+
+  .dot {
+    background: var(--primary-color);
+  }
+}
+
+.custom-tab:nth-of-type(1) .circle {
+  right: -87%;
+  bottom: -37%;
+  z-index: 222;
+}
+
+
+.custom-tab:nth-of-type(2) .circle {
+  right: -203%;
+  top: -34%;
+  z-index: 222;
+}
+
+
+.custom-tab:nth-of-type(3) .circle {
+  right: -42%;
+  bottom: -37%;
+  z-index: 222;
+}
+
+.custom-tab:nth-of-type(4) .circle {
+  display: none;
+}
+
 
 .animated-icon {
   text-align: center;
@@ -604,6 +655,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   display: flex;
   flex-wrap: wrap;
 }
+
 @media screen and (max-width: 992px) {
   .myAccount_section {
     header {
@@ -716,67 +768,70 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         }
       }
     }
-      .tabs-box button {
-    font-size: calc(var(--fs-24) - 4px);
-    padding: 10px 8px;
+
+    .tabs-box button {
+      font-size: calc(var(--fs-24) - 4px);
+      padding: 10px 8px;
+    }
+
+    .tabs-box .MuiTabs-indicator::before {
+      width: 12px;
+      height: 45px;
+    }
+
+    .tabs-box .MuiTabs-indicator::after {
+      border-bottom: 45px solid var(--bg-dark);
+    }
+
+    .tabs-box .MuiTouchRipple-root::after {
+      width: 16px;
+      height: 45px;
+    }
+
+    .tabs-box .MuiTouchRipple-root::before {
+      border-bottom: 45px solid red;
+    }
   }
 
-  .tabs-box .MuiTabs-indicator::before {
-    width: 12px;
-    height: 45px;
-  }
 
-  .tabs-box .MuiTabs-indicator::after {
-    border-bottom: 45px solid var(--bg-dark);
-  }
+  @media (max-width: 768px) {
+    
+    .tabs-box {
+      margin-bottom: 40px;
+    }
 
-  .tabs-box .MuiTouchRipple-root::after {
-    width: 16px;
-    height: 45px;
-  }
+    .tabs-box button {
+      font-size: calc(var(--fs-24) - 6px);
+      line-height: 1.2;
+      padding: 8px 6px;
+    }
 
-  .tabs-box .MuiTouchRipple-root::before {
-    border-bottom: 45px solid red;
+    .tabs-box button:nth-of-type(odd)::before,
+    .tabs-box button:nth-of-type(odd)::after {
+      height: 80%;
+    }
+
+    .tabs-box .MuiTabs-indicator::before {
+      width: 10px;
+      height: 35px;
+    }
+
+    .tabs-box .MuiTabs-indicator::after {
+      border-bottom: 35px solid var(--bg-dark);
+    }
+
+    .tabs-box .MuiTouchRipple-root::after {
+      width: 14px;
+      height: 35px;
+    }
+
+    .tabs-box .MuiTouchRipple-root::before {
+      border-bottom: 35px solid red;
+    }
+
   }
 }
 
-
-@media (max-width: 768px) {
-  .tabs-box {
-    margin-bottom: 40px;
-  }
-
-  .tabs-box button {
-    font-size: calc(var(--fs-24) - 6px);
-    line-height: 1.2;
-    padding: 8px 6px;
-  }
-
-  .tabs-box button:nth-of-type(odd)::before,
-  .tabs-box button:nth-of-type(odd)::after {
-    height: 80%;
-  }
-
-  .tabs-box .MuiTabs-indicator::before {
-    width: 10px;
-    height: 35px;
-  }
-
-  .tabs-box .MuiTabs-indicator::after {
-    border-bottom: 35px solid var(--bg-dark);
-  }
-
-  .tabs-box .MuiTouchRipple-root::after {
-    width: 14px;
-    height: 35px;
-  }
-
-  .tabs-box .MuiTouchRipple-root::before {
-    border-bottom: 35px solid red;
-  }
-
-  }
-}
 @media screen and (max-width: 570px) {
   .myAccount_section {
     header {
@@ -819,7 +874,19 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         clip-path: none;
       }
     }
+.tabs-box{
+  .tab-label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.circle {
+display: none;
+ 
+}
+}
     .tabs-box button {
       font-size: 14px;
       padding: 6px 4px;
@@ -862,4 +929,3 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 
 }
-
