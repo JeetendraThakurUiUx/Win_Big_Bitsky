@@ -599,98 +599,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
-@media screen and (max-width: 570px) {
-  .myAccount_section {
-    header {
-      margin-bottom: 20px;
-      display: grid;
-      grid-template-columns: 1fr;
-      align-items: center;
-      padding: 0;
-
-      .logo-container {
-
-        padding: 8px;
-
-        &::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          padding: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(45deg, #1b1b1b, #1d161d);
-          z-index: -1;
-          border-bottom-right-radius: 00px;
-          -webkit-mask-composite: xor;
-          transform: skewX(0);
-        }
-      }
-
-      .top-bar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 15px;
-        flex-direction: column;
-        border-radius: 20px;
-        background: linear-gradient(45deg, #1d161d, #1b1b1b);
-        padding: 15px;
-        margin: 10px;
-        clip-path: none;
-      }
-    }
-
-    .tabs-box button {
-      font-size: 14px;
-      padding: 6px 4px;
-    }
-
-    /* reduce dashed borders */
-    .tabs-box button:nth-of-type(odd),
-    .tabs-box button:nth-of-type(even) {
-      border-width: 1px;
-    }
-
-    .tabs-box .MuiTabs-indicator::before {
-      width: 8px;
-      height: 25px;
-    }
-
-    .tabs-box .MuiTabs-indicator::after {
-      border-bottom: 25px solid var(--bg-dark);
-    }
-
-    .tabs-box .MuiTouchRipple-root::after {
-      width: 10px;
-      height: 25px;
-    }
-
-    .tabs-box .MuiTouchRipple-root::before {
-      border-bottom: 25px solid red;
-    }
-
-    .form-box {
-      .head-2 {
-        position: absolute;
-        top: -3px;
-        right: 50%;
-        transform: translate(50%, 8px);
-        color: var(--bg-dark);
-        font-size: var(--fs-12);
-      }
-    }
-  }
-
-}
-
 
 .css-hzcega-MuiTabs-list {
   display: flex;
   flex-wrap: wrap;
 }
-
 @media screen and (max-width: 992px) {
   .myAccount_section {
     header {
@@ -864,3 +777,89 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
   }
 }
+@media screen and (max-width: 570px) {
+  .myAccount_section {
+    header {
+      margin-bottom: 20px;
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      padding: 0;
+
+      .logo-container {
+
+        padding: 8px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          padding: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(45deg, #1b1b1b, #1d161d);
+          z-index: -1;
+          border-bottom-right-radius: 00px;
+          -webkit-mask-composite: xor;
+          transform: skewX(0);
+        }
+      }
+
+      .top-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        flex-direction: column;
+        border-radius: 20px;
+        background: linear-gradient(45deg, #1d161d, #1b1b1b);
+        padding: 15px;
+        margin: 10px;
+        clip-path: none;
+      }
+    }
+
+    .tabs-box button {
+      font-size: 14px;
+      padding: 6px 4px;
+    }
+
+    /* reduce dashed borders */
+    .tabs-box button:nth-of-type(odd),
+    .tabs-box button:nth-of-type(even) {
+      border-width: 1px;
+    }
+
+    .tabs-box .MuiTabs-indicator::before {
+      width: 8px;
+      height: 25px;
+    }
+
+    .tabs-box .MuiTabs-indicator::after {
+      border-bottom: 25px solid var(--bg-dark);
+    }
+
+    .tabs-box .MuiTouchRipple-root::after {
+      width: 10px;
+      height: 25px;
+    }
+
+    .tabs-box .MuiTouchRipple-root::before {
+      border-bottom: 25px solid red;
+    }
+
+    .form-box {
+      .head-2 {
+        position: absolute;
+        top: -3px;
+        right: 50%;
+        transform: translate(50%, 8px);
+        color: var(--bg-dark);
+        font-size: var(--fs-12);
+      }
+    }
+  }
+
+}
+

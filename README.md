@@ -4,14 +4,14 @@
 
 ## Figma Design
 
-- [Figma Prototype](https://www.figma.com/design/GQOW3fM6ssfDZUkt6Kg4S2/Untitled?node-id=3-334&t=EyixI2IJlxdkoKxB-0)
+- [Figma Prototype](https://www.figma.com/proto/GQOW3fM6ssfDZUkt6Kg4S2/Untitled?node-id=3-334&t=T6JjkKBPZ77u7aKE-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1)
 
 ## Live Demo
 
-- *(https://win-big-in-bitsky.netlify.app/)*
+- *(https://win-big-bitsky.netlify.app/)*
 
  ## Git Hub
-- *(https://github.com/Jeetendra1605/Win_In_Big_Bitsky)*
+- *(https://github.com/JeetendraThakurUiUx/Win_Big_Bitsky)*
 ---
 
 ## Project Overview
